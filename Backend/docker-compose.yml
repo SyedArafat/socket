@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  node-app:
+    build:
+      context: ${DOCKER_BUILD_CONTEXT_DIR}
+      dockerfile: Dockerfile
+    image: node_image:${DOCKER_BUILD_MODE}
+    container_name: node_app
+    ports:
+      - "${APP_HOST_PORT}:3000"
+    env_file:
+      - .envs/app.env

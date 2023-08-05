@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  node-app:
+    build:
+      args:
+        NODE_ENV: production
+    environment:
+      - DOCKER_BUILD_MODE=production
+    command: npm run start
